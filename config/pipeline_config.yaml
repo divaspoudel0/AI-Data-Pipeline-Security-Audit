@@ -1,0 +1,22 @@
+audit_id: "AUDIT-2025-001"
+
+pipeline:
+  name: "NLP Annotation Pipeline v2"
+  stages:
+    - data_collection
+    - annotation
+    - quality_assurance
+    - data_export
+    - model_ingestion
+
+settings:
+  anomaly_threshold: 0.15       # Label distribution deviation threshold
+  speed_zscore_threshold: 2.5   # Z-score for speed anomaly detection
+  honeypot_ratio: 0.10          # 10% of tasks are honeypots
+  min_inter_annotator_agreement: 0.80
+
+compliance:
+  frameworks:
+    - ISO_27001
+    - SOC2
+  data_classification: CONFIDENTIAL
